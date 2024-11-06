@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_eample/screen_one.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,39 +17,49 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Getx SnackBar"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Card(
-            color: Colors.greenAccent,
-            child: ListTile(
-              title: const Text("Getx dialoge alert"),
-              subtitle: const Text("Getx dialoge alert"),
-              onTap: () {
-                Get.bottomSheet(Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 12),
-                      ListTile(
-                        leading: const Icon(Icons.light_mode),
-                        title: const Text("Light Mode"),
-                        onTap: () {
-                          Get.changeTheme(ThemeData.light());
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.dark_mode),
-                        title: const Text("Dark Mode"),
-                        onTap: () {
-                          Get.changeTheme(ThemeData.dark());
-                        },
-                      )
-                    ],
-                  ),
-                ));
+          // Card(
+          //   color: Colors.greenAccent,
+          //   child: ListTile(
+          //     title: const Text("Getx dialoge alert"),
+          //     subtitle: const Text("Getx dialoge alert"),
+          //     onTap: () {
+          //       Get.bottomSheet(Container(
+          //         decoration: BoxDecoration(
+          //           color: Colors.black,
+          //           borderRadius: BorderRadius.circular(15),
+          //         ),
+          //         child: Column(
+          //           children: [
+          //             const SizedBox(height: 12),
+          //             ListTile(
+          //               leading: const Icon(Icons.light_mode),
+          //               title: const Text("Light Mode"),
+          //               onTap: () {
+          //                 Get.changeTheme(ThemeData.light());
+          //               },
+          //             ),
+          //             ListTile(
+          //               leading: const Icon(Icons.dark_mode),
+          //               title: const Text("Dark Mode"),
+          //               onTap: () {
+          //                 Get.changeTheme(ThemeData.dark());
+          //               },
+          //             )
+          //           ],
+          //         ),
+          //       ));
+          //     },
+          //   ),
+          // )
+          Center(
+            child: TextButton(
+              onPressed: () {
+                Get.toNamed('/screen-one', arguments: {'name': 'Bilal'});
               },
+              child: const Text("Go to screen one"),
             ),
           )
         ],
