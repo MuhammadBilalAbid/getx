@@ -33,14 +33,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: 12),
                       ListTile(
                         leading: const Icon(Icons.light_mode),
-                        title: const Text("Light Theme"),
+                        title: const Text("Light Mode"),
                         onTap: () {
                           Get.changeTheme(ThemeData.light());
                         },
                       ),
                       ListTile(
                         leading: const Icon(Icons.dark_mode),
-                        title: const Text("Dark Theme"),
+                        title: const Text("Dark Mode"),
                         onTap: () {
                           Get.changeTheme(ThemeData.dark());
                         },
