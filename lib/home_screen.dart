@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 Get.bottomSheet(Container(
                   decoration: BoxDecoration(
-                    color: Colors.greenAccent,
+                    color: Colors.black,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Column(
