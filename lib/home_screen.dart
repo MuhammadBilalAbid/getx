@@ -16,54 +16,55 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Getx SnackBar"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Card(
-          //   color: Colors.greenAccent,
-          //   child: ListTile(
-          //     title: const Text("Getx dialoge alert"),
-          //     subtitle: const Text("Getx dialoge alert"),
-          //     onTap: () {
-          //       Get.bottomSheet(Container(
-          //         decoration: BoxDecoration(
-          //           color: Colors.black,
-          //           borderRadius: BorderRadius.circular(15),
-          //         ),
-          //         child: Column(
-          //           children: [
-          //             const SizedBox(height: 12),
-          //             ListTile(
-          //               leading: const Icon(Icons.light_mode),
-          //               title: const Text("Light Mode"),
-          //               onTap: () {
-          //                 Get.changeTheme(ThemeData.light());
-          //               },
-          //             ),
-          //             ListTile(
-          //               leading: const Icon(Icons.dark_mode),
-          //               title: const Text("Dark Mode"),
-          //               onTap: () {
-          //                 Get.changeTheme(ThemeData.dark());
-          //               },
-          //             )
-          //           ],
-          //         ),
-          //       ));
-          //     },
-          //   ),
-          // )
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Get.toNamed('/screen-one', arguments: {'name': 'Bilal'});
-              },
-              child: const Text("Go to screen one"),
-            ),
-          )
-        ],
-      ),
+      // body: Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   crossAxisAlignment: CrossAxisAlignment.center,
+      //   children: [
+      //     // Card(
+      //     //   color: Colors.greenAccent,
+      //     //   child: ListTile(
+      //     //     title: const Text("Getx dialoge alert"),
+      //     //     subtitle: const Text("Getx dialoge alert"),
+      //     //     onTap: () {
+      //     //       Get.bottomSheet(Container(
+      //     //         decoration: BoxDecoration(
+      //     //           color: Colors.black,
+      //     //           borderRadius: BorderRadius.circular(15),
+      //     //         ),
+      //     //         child: Column(
+      //     //           children: [
+      //     //             const SizedBox(height: 12),
+      //     //             ListTile(
+      //     //               leading: const Icon(Icons.light_mode),
+      //     //               title: const Text("Light Mode"),
+      //     //               onTap: () {
+      //     //                 Get.changeTheme(ThemeData.light());
+      //     //               },
+      //     //             ),
+      //     //             ListTile(
+      //     //               leading: const Icon(Icons.dark_mode),
+      //     //               title: const Text("Dark Mode"),
+      //     //               onTap: () {
+      //     //                 Get.changeTheme(ThemeData.dark());
+      //     //               },
+      //     //             )
+      //     //           ],
+      //     //         ),
+      //     //       ));
+      //     //     },
+      //     //   ),
+      //     // )
+      //     // Center(
+      //     //   child: TextButton(
+      //     //     onPressed: () {
+      //     //       Get.toNamed('/screen-one', arguments: {'name': 'Bilal'});
+      //     //     },
+      //     //     child: const Text("Go to screen one"),
+      //     //   ),
+      //     // )
+
+      //   ],
+      // ),
       // floatingActionButton: FloatingActionButton(
       //   backgroundColor: Colors.black,
       //   onPressed: () {
@@ -81,6 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
       //     color: Colors.white,
       //   ),
       // ),
+      body: Container(
+        height: Get.height * 0.50,
+        color: Colors.red,
+        child: const Center(child: Text("center")),
+      ),
     );
   }
 }
