@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_eample/home_screen.dart';
+import 'package:getx_eample/languages.dart';
 import 'package:getx_eample/screen_one.dart';
 import 'package:getx_eample/screen_two.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
+      translations: Languages(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
@@ -30,11 +34,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const HomeScreen(),
-      getPages: [
-        GetPage(name: '/', page: () => const HomeScreen()),
-        GetPage(name: '/screen-one', page: () => ScreenOne()),
-        GetPage(name: '/screen-two', page: () => const ScreenTwo()),
-      ],
+      // getPages: [
+      //   GetPage(name: '/', page: () => const HomeScreen()),
+      //   GetPage(name: '/screen-one', page: () => ScreenOne()),
+      //   GetPage(name: '/screen-two', page: () => const ScreenTwo()),
+      // ],
     );
   }
 }

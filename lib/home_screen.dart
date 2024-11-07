@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_eample/screen_one.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Getx SnackBar"),
+        title: const Text("Getx Localization"),
       ),
       // body: Column(
       //   mainAxisAlignment: MainAxisAlignment.center,
@@ -82,10 +81,37 @@ class _HomeScreenState extends State<HomeScreen> {
       //     color: Colors.white,
       //   ),
       // ),
-      body: Container(
-        height: Get.height * 0.50,
-        color: Colors.red,
-        child: const Center(child: Text("center")),
+      // body: Container(
+      //   height: Get.height * 0.50,
+      //   color: Colors.red,
+      //   child: const Center(child: Text("center")),
+      // ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ListTile(
+            title: Text('message'.tr),
+            subtitle: Text('name'.tr),
+          ),
+          const SizedBox(height: 50),
+          Row(
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  Get.updateLocale(const Locale('en', 'US'));
+                },
+                child: const Text("English"),
+              ),
+              const SizedBox(width: 30),
+              OutlinedButton(
+                onPressed: () {
+                  Get.updateLocale(const Locale('ur', 'Pk'));
+                },
+                child: const Text("Urdu"),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
