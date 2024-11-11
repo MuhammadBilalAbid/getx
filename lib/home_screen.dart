@@ -10,7 +10,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  double opacity = 0.4;
+  CounterController controller = Get.put(CounterController());
+
   @override
   Widget build(BuildContext context) {
     print("hello");
@@ -21,16 +22,22 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-              height: 200, width: 200, color: Colors.red.withOpacity(opacity)),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Slider(
-                value: opacity,
-                onChanged: (value) {
-                  opacity = value;
-                  setState(() {});
-                }),
+          Obx(
+            () => Container(
+              height: 200,
+              width: 200,
+              color: Colors.red.withOpacity(controller.opacity.value),
+            ),
+          ),
+          Obx(
+            () => Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Slider(
+                  value: controller.opacity.value,
+                  onChanged: (value) {
+                    controller.setOpacity(value);
+                  }),
+            ),
           )
         ],
       ),
