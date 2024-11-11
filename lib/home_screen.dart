@@ -25,6 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
             style: const TextStyle(fontSize: 60),
           ),
         ),
+        //  child: Obx(() {
+        //   return Text(
+        //     controller.counter.toString(),
+        //     style: const TextStyle(fontSize: 60),
+        //   );
+        // }),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
