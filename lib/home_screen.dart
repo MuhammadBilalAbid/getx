@@ -11,35 +11,28 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   CounterController controller = Get.put(CounterController());
-
   @override
   Widget build(BuildContext context) {
     print("hello");
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Counter Example"),
+        title: const Text("Swicth Example"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Obx(
-            () => Container(
-              height: 200,
-              width: 200,
-              color: Colors.red.withOpacity(controller.opacity.value),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Obx(
+              () => Switch(
+                activeColor: Colors.black,
+                value: controller.notification.value,
+                onChanged: (value) {
+                  controller.setNotification(value);
+                },
+              ),
             ),
-          ),
-          Obx(
-            () => Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Slider(
-                  value: controller.opacity.value,
-                  onChanged: (value) {
-                    controller.setOpacity(value);
-                  }),
-            ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

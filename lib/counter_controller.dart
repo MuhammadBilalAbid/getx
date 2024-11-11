@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
 class CounterController extends GetxController {
-  RxDouble opacity = 0.1.obs;
+  RxBool notification = false.obs;
 
-  setOpacity(double value) {
-    opacity.value = value;
+  setNotification(bool value) {
+    notification.value = value;
   }
 }
