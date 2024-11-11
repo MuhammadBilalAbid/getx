@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  CounterController controller = Get.put(CounterController());
+  double opacity = 0.4;
   @override
   Widget build(BuildContext context) {
     print("hello");
@@ -18,29 +18,21 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Counter Example"),
       ),
-      body: Center(
-        child: Obx(
-          () => Text(
-            controller.counter.toString(),
-            style: const TextStyle(fontSize: 60),
-          ),
-        ),
-        //  child: Obx(() {
-        //   return Text(
-        //     controller.counter.toString(),
-        //     style: const TextStyle(fontSize: 60),
-        //   );
-        // }),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black,
-        onPressed: () {
-          controller.incrementCounter();
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+              height: 200, width: 200, color: Colors.red.withOpacity(opacity)),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Slider(
+                value: opacity,
+                onChanged: (value) {
+                  opacity = value;
+                  setState(() {});
+                }),
+          )
+        ],
       ),
     );
   }
