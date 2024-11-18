@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_eample/home_screen.dart';
+import 'package:getx_eample/image_show.dart';
 import 'package:getx_eample/languages.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeScreen(),
+      home: const ImageShow(),
       // getPages: [
       //   GetPage(name: '/', page: () => const HomeScreen()),
       //   GetPage(name: '/screen-one', page: () => ScreenOne()),
